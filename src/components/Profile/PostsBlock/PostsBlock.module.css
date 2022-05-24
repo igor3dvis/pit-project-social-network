@@ -1,0 +1,25 @@
+.my__posts {
+  padding: 1em;
+}
+
+.new__post {
+  display: grid;
+  grid-template-columns: 10fr 2fr;
+  gap: 4px;
+  padding: .3em;
+  border: 1px solid #96aab7;
+}
+
+.newPostText {}
+
+.newPostBtn {
+  background-color: rgb(54, 54, 54);
+  color: #96aab7;
+}
+
+
+.posts {
+  padding: 1em 0;
+  display: grid;
+  gap: 1em;
+}

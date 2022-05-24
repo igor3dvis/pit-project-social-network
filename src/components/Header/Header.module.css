@@ -1,0 +1,28 @@
+.header {
+  grid-area: h;
+  padding: .8em .8em;
+  background-color: rgb(7, 7, 7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.headerTitle{
+  color: cadetblue;
+  font-weight: 300;
+}
+
+.contactWrapper{
+color:rgb(194, 196, 196);
+
+}
+
+.contact{
+  font-weight: 300;
+}
+

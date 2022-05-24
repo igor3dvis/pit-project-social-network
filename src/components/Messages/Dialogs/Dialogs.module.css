@@ -1,0 +1,61 @@
+.dialogsWrapper {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    padding: .3em;
+    gap: .2em;
+}
+
+/* dialogs */
+.dialogs {
+    /* height: calc(100vh - 100px); */
+    padding: .5em;
+    background-color: #96aab7;
+}
+
+.dialog {
+    padding: .5em 0;
+}
+
+.links {
+    color: #141514;
+}
+
+.links::before {
+    content: "<";
+}
+
+.links::after {
+    content: ">";
+}
+
+/* messages */
+.messages {
+    padding: .5em;
+    background-color: rgb(36, 36, 36);
+}
+
+.message {
+    margin-top: 10px;
+    margin-left: 5em;
+    padding: .5em;
+    background-color: #c3c8cc;
+    color: #141514;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.newMessage {
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 4px;
+    padding: .3em;
+    border: 1px solid #96aab7;
+}
+
+.newMessage__Text {}
+
+.newMessage__Btn {
+    background-color: rgb(54, 54, 54);
+    color: #96aab7;
+}

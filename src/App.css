@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+/* .container {
+  max-width: 60%;
+  margin: 5px auto;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  background-color:#2c2c2d;
+} */
+
+.app-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "h h"
+    "n c";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 3fr 11fr;
+  gap: .2em;
+}
+
+.content {
+  grid-area: c;
+  height: calc(100vh - 90px);
+  overflow:hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: #141514;
+  color:#96aab7;
+  /* box-shadow: 0 2px 6px #96aab7; */
+}
+
+.content::-webkit-scrollbar {
+  width: 8px;
+  background-color: #2c2c2d;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: #96aab7;
+  border-radius: 4px;
+}

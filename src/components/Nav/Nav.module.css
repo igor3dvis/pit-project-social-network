@@ -1,0 +1,13 @@
+
+
+
+.nav {
+  grid-area: n;
+  padding: .5em;
+  background-color: #141514;
+  color: #fff;
+}
+
+.nav :last-child {
+  margin-top: 70vh;
+}
