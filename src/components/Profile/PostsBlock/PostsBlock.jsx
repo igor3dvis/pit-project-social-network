@@ -1,20 +1,21 @@
 import React from "react";
 import styles from "./PostsBlock.module.css";
 import Post from "../PostsBlock/Post/Post";
+import {
+  addNewPostActionCreator,
+  updateTextPostActionCreator,
+} from "../../../myRedux/reducerProfile";
 
 const PostsBlock = (props) => {
-  const { profilePage, addNewPost, updateTextPost } = props;
+  const { profilePage, dispatch } = props;
 
   let newPost = React.createRef();
 
-  const addPost = () => {
-    let text = newPost.current.value;
-    addNewPost(text);
-  };
+  const addPost = () => dispatch(addNewPostActionCreator());
 
   const handlerChange = () => {
     let text = newPost.current.value;
-    updateTextPost(text); // called from "state.js"
+    dispatch(updateTextPostActionCreator(text));
   };
 
   return (

@@ -3,15 +3,11 @@ import Dialogs from "./Dialogs/Dialogs";
 import styles from "./Messages.module.css";
 
 const Messages = (props) => {
-  const { messagesPage, addNewMessage, updateTextMessage } = props;
+  const { messagesPage, dispatch } = props;
 
   return (
     <div className={styles.messagesBlockWrapper}>
-      <Dialogs
-        messagesPage={messagesPage}
-        addNewMessage={addNewMessage}
-        updateTextMessage={updateTextMessage}
-      />
+      <Dialogs messagesPage={messagesPage} dispatch={dispatch} />
     </div>
   );
 };

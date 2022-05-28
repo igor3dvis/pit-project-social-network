@@ -10,13 +10,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
 const App = (props) => {
-  const {
-    state,
-    addNewPost,
-    updateTextPost,
-    addNewMessage,
-    updateTextMessage,
-  } = props;
+  const { state, dispatch } = props;
 
   return (
     <BrowserRouter>
@@ -28,11 +22,7 @@ const App = (props) => {
             <Route
               path="/profile"
               element={
-                <Profile
-                  profilePage={state.profilePage}
-                  addNewPost={addNewPost}
-                  updateTextPost={updateTextPost}
-                />
+                <Profile profilePage={state.profilePage} dispatch={dispatch} />
               }
             />
             <Route
@@ -40,8 +30,7 @@ const App = (props) => {
               element={
                 <Messages
                   messagesPage={state.messagesPage}
-                  addNewMessage={addNewMessage}
-                  updateTextMessage={updateTextMessage}
+                  dispatch={dispatch}
                 />
               }
             />

@@ -2,21 +2,21 @@ import React from "react";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Mesage/Mesage";
 import styles from "./Dialogs.module.css";
+import {
+  addNewMessageActionCreator,
+  updateTextMessageActionCreator,
+} from "../../../myRedux/reducerMessages";
 
 const Dialogs = (props) => {
-  const { messagesPage, addNewMessage, updateTextMessage } = props;
+  const { messagesPage, dispatch } = props;
 
   let newMess = React.createRef();
 
-  const addMess = () => {
-    let text = newMess.current.value;
-    addNewMessage(); // called from "state.js"
-    
-  };
+  const addMess = () => dispatch(addNewMessageActionCreator());
 
   const handlerChange = () => {
     let text = newMess.current.value;
-    updateTextMessage(text); // called from "state.js"
+    dispatch(updateTextMessageActionCreator(text));
   };
 
   let dialogsItems = messagesPage.dialogsData.map((dialog) => {

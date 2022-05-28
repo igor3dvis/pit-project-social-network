@@ -4,16 +4,12 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import PostsBlock from "./PostsBlock/PostsBlock";
 
 const Profile = (props) => {
-  const { profilePage, addNewPost, updateTextPost } = props;
+  const { profilePage, dispatch } = props;
 
   return (
     <div className={styles.profile}>
       <ProfileInfo />
-      <PostsBlock
-        profilePage={profilePage}
-        addNewPost={addNewPost} 
-        updateTextPost={updateTextPost}
-      />
+      <PostsBlock profilePage={profilePage} dispatch={dispatch} />
     </div>
   );
 };

@@ -8,13 +8,7 @@ import { unicId } from "./utils/idFromDateTime";
 const reRender = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App
-        state={state}
-        addNewPost={store.addNewPost.bind(store)}
-        updateTextPost={store.updateTextPost.bind(store)}
-        addNewMessage={store.addNewMessage.bind(store)}
-        updateTextMessage={store.updateTextMessage.bind(store)}
-      />
+      <App state={state} dispatch={store.dispatch.bind(store)} />
     </React.StrictMode>,
     document.getElementById("root")
   );
