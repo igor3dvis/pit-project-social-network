@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import store from "./myRedux/state.js";
+import store from "./myRedux/store.js";
 import { unicId } from "./utils/idFromDateTime";
 
 const reRender = (state) => {
