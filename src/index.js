@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import store from "./myRedux/store.js";
-import { unicId } from "./utils/idFromDateTime";
+import store from "./redux/store.js";
+
 
 const reRender = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} dispatch={store.dispatch.bind(store)} />
+      <App state={state} dispatch={store.dispatch.bind(store)}  />
     </React.StrictMode>,
     document.getElementById("root")
   );
@@ -16,6 +16,8 @@ const reRender = (state) => {
 
 reRender(store.getState());
 
-store.subscride(reRender);
-
-console.log(unicId());
+//store.subscride(reRender);
+store.subscribe(()=>{
+  let state = store.getState()
+  reRender(store.getState(state))
+});

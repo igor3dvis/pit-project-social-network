@@ -5,7 +5,7 @@ import styles from "./Dialogs.module.css";
 import {
   addNewMessageActionCreator,
   updateTextMessageActionCreator,
-} from "../../../myRedux/reducerMessages";
+} from "../../../redux/reducerMessages";
 
 const Dialogs = (props) => {
   const { messagesPage, dispatch } = props;
@@ -19,19 +19,19 @@ const Dialogs = (props) => {
     dispatch(updateTextMessageActionCreator(text));
   };
 
-  let dialogsItems = messagesPage.dialogsData.map((dialog) => {
-    return <Dialog key={dialog.id} name={dialog.name} id={dialog.id} />;
-  });
-
-  let messagesItems = messagesPage.messagesData.map((message, index) => {
-    return <Message key={index} messageText={message.messageText} />;
-  });
-
   return (
     <div className={styles.dialogsWrapper}>
-      <div className={styles.dialogs}>{dialogsItems}</div>
+      <div className={styles.dialogs}>
+        {messagesPage.dialogsData.map((dialog) => {
+          return <Dialog key={dialog.id} name={dialog.name} id={dialog.id} />;
+        })}
+      </div>
       <div>
-        <div className={styles.messages}>{messagesItems}</div>
+        <div className={styles.messages}>
+          {messagesPage.messagesData.map((message, index) => {
+            return <Message key={index} messageText={message.messageText} />;
+          })}
+        </div>
 
         <div className={styles.newMessage}>
           <textarea

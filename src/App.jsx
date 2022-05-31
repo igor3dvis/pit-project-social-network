@@ -10,7 +10,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
 const App = (props) => {
-  const { state, dispatch } = props;
+  const { state, dispatch, store } = props;
 
   return (
     <BrowserRouter>

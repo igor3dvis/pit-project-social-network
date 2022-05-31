@@ -4,7 +4,7 @@ import Post from "../PostsBlock/Post/Post";
 import {
   addNewPostActionCreator,
   updateTextPostActionCreator,
-} from "../../../myRedux/reducerProfile";
+} from "../../../redux/reducerProfile";
 
 const PostsBlock = (props) => {
   const { profilePage, dispatch } = props;
@@ -33,6 +33,7 @@ const PostsBlock = (props) => {
             create
           </button>
         </div>
+
         <div className={styles.posts}>
           {profilePage.postsData.map((post) => {
             return <Post key={post.id} text={post.text} />;

@@ -4,7 +4,7 @@ import styles from "./Messages.module.css";
 
 const Messages = (props) => {
   const { messagesPage, dispatch } = props;
-
+  
   return (
     <div className={styles.messagesBlockWrapper}>
       <Dialogs messagesPage={messagesPage} dispatch={dispatch} />
