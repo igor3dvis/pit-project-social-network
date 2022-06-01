@@ -4,14 +4,14 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Profile from "./components/Profile/Profile";
-import Messages from "./components/Messages/Messages";
+import MessagesDialogs from "./components/MessagesDialogs/MessagesDialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
 const App = (props) => {
-  const { state, dispatch, store } = props;
-
+  //const { store } = props;
+  
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -22,16 +22,13 @@ const App = (props) => {
             <Route
               path="/profile"
               element={
-                <Profile profilePage={state.profilePage} dispatch={dispatch} />
+                <Profile store={props} />
               }
             />
             <Route
               path="/messages"
               element={
-                <Messages
-                  messagesPage={state.messagesPage}
-                  dispatch={dispatch}
-                />
+                <MessagesDialogs store={props} />
               }
             />
             <Route path="/news" element={<News />} />

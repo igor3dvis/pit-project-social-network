@@ -1,21 +1,17 @@
 import React from "react";
 import styles from "./PostsBlock.module.css";
 import Post from "../PostsBlock/Post/Post";
-import {
-  addNewPostActionCreator,
-  updateTextPostActionCreator,
-} from "../../../redux/reducerProfile";
 
 const PostsBlock = (props) => {
-  const { profilePage, dispatch } = props;
+  //const { profilePage  } = props;
 
   let newPost = React.createRef();
 
-  const addPost = () => dispatch(addNewPostActionCreator());
+  const handlerAddPost = () => props.addNewPost();
 
-  const handlerChange = () => {
+  const handlerPostChange = () => {
     let text = newPost.current.value;
-    dispatch(updateTextPostActionCreator(text));
+    props.updateNewPost(text);
   };
 
   return (
@@ -26,16 +22,16 @@ const PostsBlock = (props) => {
           <textarea
             className={styles.newPostText}
             ref={newPost}
-            onChange={handlerChange}
-            value={profilePage.postTextDefault}
+            onChange={handlerPostChange}
+            value={props.profilePage.postTextDefault}
           ></textarea>
-          <button className={styles.newPostBtn} onClick={addPost}>
+          <button className={styles.newPostBtn} onClick={handlerAddPost}>
             create
           </button>
         </div>
-
+        {/* PostsBlock - all posts are in this block */}
         <div className={styles.posts}>
-          {profilePage.postsData.map((post) => {
+          {props.profilePage.postsData.map((post) => {
             return <Post key={post.id} text={post.text} />;
           })}
         </div>

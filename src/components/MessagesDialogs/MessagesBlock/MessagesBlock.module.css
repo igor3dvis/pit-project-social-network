@@ -1,32 +1,3 @@
-.dialogsWrapper {
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-    padding: .3em;
-    gap: .2em;
-}
-
-/* dialogs */
-.dialogs {
-    /* height: calc(100vh - 100px); */
-    padding: .5em;
-    background-color: #96aab7;
-}
-
-.dialog {
-    padding: .5em 0;
-}
-
-.links {
-    color: #141514;
-}
-
-.links::before {
-    content: "<";
-}
-
-.links::after {
-    content: ">";
-}
 
 /* messages */
 .messages {
@@ -53,7 +24,7 @@
     border: 1px solid #96aab7;
 }
 
-.newMessage__Text {}
+/* .newMessage__Text {} */
 
 .newMessage__Btn {
     background-color: rgb(54, 54, 54);
