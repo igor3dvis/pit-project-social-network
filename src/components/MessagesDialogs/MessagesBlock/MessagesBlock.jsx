@@ -12,17 +12,14 @@ const MessagesBlock = (props) => {
   };
 
   const handlerMessageChange = () => {
-    let text = newMess.current.value;
-    props.updateMessage(text);
+    props.updateMessage(newMess.current.value);
   };
-
-  //debugger;
 
   return (
     <>
       <div>
         <div className={styles.messages}>
-          {props.messagesPage.messagesData.map((message, index) => {
+          {props.messagesData.map((message, index) => {
             return <Message key={index} messageText={message.messageText} />;
           })}
         </div>
@@ -32,7 +29,7 @@ const MessagesBlock = (props) => {
             className={styles.newMessage__Text}
             ref={newMess}
             onChange={handlerMessageChange}
-            value={props.messagesPage.messageTextDefault}
+            value={props.messageTextDefault}
           />
           <button
             className={styles.newMessage__Btn}

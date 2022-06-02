@@ -3,15 +3,14 @@ import styles from "./PostsBlock.module.css";
 import Post from "../PostsBlock/Post/Post";
 
 const PostsBlock = (props) => {
-  //const { profilePage  } = props;
+  //const { } = props;
 
   let newPost = React.createRef();
 
   const handlerAddPost = () => props.addNewPost();
 
   const handlerPostChange = () => {
-    let text = newPost.current.value;
-    props.updateNewPost(text);
+    props.updateNewPost(newPost.current.value);
   };
 
   return (

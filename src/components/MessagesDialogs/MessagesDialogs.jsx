@@ -3,16 +3,12 @@ import DialogsBlockContainer from "./DialogsBlock/DialogsBlockContainer";
 import MessagesBlockContainer from "./MessagesBlock/MessagesBlockContainer";
 import styles from "./MessagesDialogs.module.css";
 
-const MessagesDialogs = (props) => {
-  //const {} = props;
-
+const MessagesDialogs = () => {
   return (
-    
-      <div className={styles.dialogsWrapper}>
-        <DialogsBlockContainer store={props.store}/>
-        <MessagesBlockContainer store={props.store}/>
-      </div>
-    
+    <div className={styles.dialogsWrapper}>
+      <DialogsBlockContainer />
+      <MessagesBlockContainer />
+    </div>
   );
 };
 export default MessagesDialogs;

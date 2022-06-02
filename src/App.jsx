@@ -9,7 +9,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
-const App = (props) => {
+const App = () => {
   //const { store } = props;
   
   return (
@@ -22,13 +22,13 @@ const App = (props) => {
             <Route
               path="/profile"
               element={
-                <Profile store={props} />
+                <Profile />
               }
             />
             <Route
               path="/messages"
               element={
-                <MessagesDialogs store={props} />
+                <MessagesDialogs />
               }
             />
             <Route path="/news" element={<News />} />

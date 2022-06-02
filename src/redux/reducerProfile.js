@@ -4,26 +4,28 @@ const ADD_NEW_POST = "ADD-NEW-POST";
 const UPDATE_TEXT_POST = "UPDATE-TEXT-POST";
 
 let initionalizeState = {
-  
-    postsData: [
-      { id: 1, text: "Hello, Word" },
-      { id: 2, text: "Post #2 alredy here!!!" },
-    ],
-    postTextDefault: "text new post ...",
-  
+  //postsData: [ ],
+  postsData: [
+    { id: 1, text: "Hello, Word" },
+  ],
+  postTextDefault: "text new post ...",
 };
+
 export const profileReducer = (state = initionalizeState, action) => {
   switch (action.type) {
     case ADD_NEW_POST:
       let id = unicId();
-      let newPost = { id: id, text: state.postTextDefault };
-      state.postsData.push(newPost);
-      state.postTextDefault = "";
-      return state;
+      return {
+        ...state,
+        postsData: [...state.postsData, { id: id, text: state.postTextDefault }],
+        postTextDefault: "",
+      };
 
     case UPDATE_TEXT_POST:
-      state.postTextDefault = action.newText;
-      return state;
+      return { 
+        ...state, 
+        postTextDefault: action.newText 
+      };
 
     default:
       return state;

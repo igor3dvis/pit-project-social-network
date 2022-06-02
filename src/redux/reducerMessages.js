@@ -16,15 +16,18 @@ let initionalizeState = {
 export const messagesReducer = (state = initionalizeState, action) => {
   switch (action.type) {
     case ADD_NEW_MESSAGE:
-      let newMessage = { messageText: state.messageTextDefault };
-      state.messagesData.push(newMessage);
-      state.messageTextDefault = "";
-      return state;
+      return {
+        ...state,
+        messagesData: [...state.messagesData, { messageText: state.messageTextDefault }],
+        messageTextDefault: "",
+      };
 
     case UPDATE_TEXT_MESSAGE:
-      state.messageTextDefault = action.newText;
-      return state;
-
+      return{
+        ...state,
+        messageTextDefault: action.newText
+      }
+      
     default:
       return state;
   }
