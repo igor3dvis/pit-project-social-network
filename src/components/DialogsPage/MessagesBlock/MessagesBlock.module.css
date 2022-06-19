@@ -3,6 +3,22 @@
 .messages {
     padding: .5em;
     background-color: rgb(36, 36, 36);
+    height: calc(100vh - 140px);
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #141514;
+    color: #96aab7;
+}
+
+.messages::-webkit-scrollbar {
+    width: 4px;
+    background-color: #2c2c2d;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #96aab7;
+    border-radius: 2px;
 }
 
 .message {

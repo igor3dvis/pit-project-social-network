@@ -1,0 +1,39 @@
+.preloadWrapper {
+    max-height: 50px;
+    padding: 3em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.preloadItems {
+    /* margin: 0 auto; */
+
+}
+
+.preloadItem {
+    margin-right: .6em;
+    /* font-size: large; */
+    animation: flexWord 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes flexWord {
+    0% {
+        margin-right: .3em;
+        color: rgb(37, 150, 241);
+    }
+    5% {
+        margin-right: .5em;
+        color: rgb(253, 253, 253);
+    }
+    10% {
+        margin-right: .1em;
+        color: rgb(1, 86, 107);
+    }
+    70% {
+        margin-right: .8em;
+    }
+    100% {
+        margin-right: .3em;
+        color: rgb(37, 150, 241);
+    }
+}

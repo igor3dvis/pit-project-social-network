@@ -1,0 +1,35 @@
+/* dialogs */
+.dialogs {
+    padding: .5em;
+    background-color: #96aab7;
+    /* height: calc(100vh - 140px);  */
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    color: #96aab7;
+}
+.dialogs::-webkit-scrollbar {
+    width: 4px;
+    background-color: #2c2c2d;
+}
+
+.dialogs::-webkit-scrollbar-thumb {
+    background-color: #96aab7;
+    border-radius: 2px;
+}
+
+.dialog {
+    padding: .5em 0;
+}
+
+.links {
+    color: #141514;
+}
+
+.links::before {
+    content: "<";
+}
+
+.links::after {
+    content: ">";
+}

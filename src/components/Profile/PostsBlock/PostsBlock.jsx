@@ -16,7 +16,6 @@ const PostsBlock = (props) => {
   return (
     <>
       <div className={styles.my__posts}>
-        MY POSTS
         <div className={styles.new__post}>
           <textarea
             className={styles.newPostText}

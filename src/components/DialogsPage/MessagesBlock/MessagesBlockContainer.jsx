@@ -2,28 +2,8 @@ import MessagesBlock from "./MessagesBlock";
 import {
   addNewMessageActionCreator,
   updateTextMessageActionCreator,
-} from "../../../redux/reducerMessages";
+} from "../../../redux/dialogsReducer";
 import { connect } from "react-redux";
-
-// const MessagesBlockContainer = (props) => {
-//   //const {} = props;
-
-//   const onAddMess = () => props.store.dispatch(addNewMessageActionCreator());
-
-//   const onMessageChange = (text) => {
-//     props.store.dispatch(updateTextMessageActionCreator(text));
-//   };
-
-//   return (
-//     <>
-//       <MessagesBlock
-//         messagesPage={props.store.state.messagesPage}
-//         addNewMessage={onAddMess}
-//         updateMessage={onMessageChange}
-//       />
-//     </>
-//   );
-// };
 
 let mapStateToProps = (state) => {
   return {

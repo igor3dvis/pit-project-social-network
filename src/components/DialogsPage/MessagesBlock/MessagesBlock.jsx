@@ -1,5 +1,5 @@
 import React from "react";
-import Message from "../MessagesBlock/Mesage/Mesage";
+import Message from "./Mesage/Mesage";
 import styles from "./MessagesBlock.module.css";
 
 const MessagesBlock = (props) => {
@@ -17,7 +17,7 @@ const MessagesBlock = (props) => {
 
   return (
     <>
-      <div>
+      <div >
         <div className={styles.messages}>
           {props.messagesData.map((message, index) => {
             return <Message key={index} messageText={message.messageText} />;

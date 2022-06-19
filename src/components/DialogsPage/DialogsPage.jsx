@@ -1,9 +1,9 @@
 import React from "react";
+import styles from "./DialogsPage.module.css";
 import DialogsBlockContainer from "./DialogsBlock/DialogsBlockContainer";
 import MessagesBlockContainer from "./MessagesBlock/MessagesBlockContainer";
-import styles from "./MessagesDialogs.module.css";
 
-const MessagesDialogs = () => {
+const DialogsPage = () => {
   return (
     <div className={styles.dialogsWrapper}>
       <DialogsBlockContainer />
@@ -11,4 +11,4 @@ const MessagesDialogs = () => {
     </div>
   );
 };
-export default MessagesDialogs;
+export default DialogsPage;

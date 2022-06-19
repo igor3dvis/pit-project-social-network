@@ -1,1 +1,19 @@
+.profile {
+    height: calc(100vh - 90px);
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #141514;
+    color: #96aab7;
 
+}
+
+.profile::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2c2c2d;
+}
+
+.profile::-webkit-scrollbar-thumb {
+    background-color: #96aab7;
+    border-radius: 4px;
+}
