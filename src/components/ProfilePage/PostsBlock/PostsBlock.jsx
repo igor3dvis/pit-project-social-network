@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PostsBlock.module.css";
-import Post from "../PostsBlock/Post/Post";
+import Post from "./Post/Post";
 
 const PostsBlock = (props) => {
   //const { } = props;

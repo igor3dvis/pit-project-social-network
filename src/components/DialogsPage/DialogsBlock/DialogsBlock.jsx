@@ -1,9 +1,11 @@
 import React from "react";
 import Dialog from "./Dialog/Dialog";
+import { connect } from "react-redux";
 import styles from "./DialogsBlock.module.css";
+import { compose } from "redux";
 
 const DialogsBlock = (props) => {
-  // const { } = props;
+  
   return (
     <>
       <div className={styles.dialogs}>
@@ -15,4 +17,10 @@ const DialogsBlock = (props) => {
   );
 };
 
-export default DialogsBlock;
+let mapStateToProps = (state) => {
+  return {
+    dialogsData: state.messagesPage.dialogsData,
+  };
+};
+
+export default compose(connect(mapStateToProps))(DialogsBlock);

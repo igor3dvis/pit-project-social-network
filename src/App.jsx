@@ -1,50 +1,33 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { Provider } from "react-redux";
 import "./App.css";
-import HeaderContainer from "./components/Header/HeaderContainer";
-//import Header from "./components/Header/Header";
+import Header from "./components/Header/HeaderContainer";
 import Nav from "./components/Nav/Nav";
-import Profile from "./components/Profile/Profile";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import UsersPageContainer from "./components/UsersPage/UsersPageContainer";
+import UsersPage from "./components/UsersPage/UsersPage";
 import DialogsPage from "./components/DialogsPage/DialogsPage";
-
-import store from "./redux/store.js";
-
+import LoginPage from "./components/LoginPage/LoginPage";
 
 const App = () => {
-  //const { store } = props;
-
   return (
-    <Provider store={store}>
+    <>
       <div className="app-wrapper">
-        <HeaderContainer />
+        <Header />
         <Nav />
         <main className="content">
-          <Route path="/profile/:userID">
-            <Profile />
-          </Route>
-          <Route path="/users">
-            <UsersPageContainer />
-          </Route>
-          <Route path="/messages">
-            <DialogsPage />
-          </Route>
-          <Route path="/news">
-            <News />
-          </Route>
-          <Route path="/music">
-            <Music />
-          </Route>
-          <Route path="/settings">
-            <Settings />
-          </Route>
+          <Route path="/profile/:userID"><ProfilePage /></Route>
+          <Route path="/users"><UsersPage /></Route>
+          <Route path="/messages"><DialogsPage /></Route>
+          <Route path="/news"><News /></Route>
+          <Route path="/music"><Music /></Route>
+          <Route path="/settings"><Settings /></Route>
+          <Route path="/login"><LoginPage /></Route>
         </main>
       </div>
-    </Provider>
+    </>
   );
 };
 export default App;

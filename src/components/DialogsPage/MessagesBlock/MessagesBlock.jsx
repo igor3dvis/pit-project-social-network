@@ -1,6 +1,12 @@
 import React from "react";
+import {
+  addNewMessage,
+  updateTextMessage,
+} from "../../../redux/dialogsReducer";
+import { connect } from "react-redux";
 import Message from "./Mesage/Mesage";
 import styles from "./MessagesBlock.module.css";
+import { compose } from "redux";
 
 const MessagesBlock = (props) => {
   //const {  } = props;
@@ -17,7 +23,7 @@ const MessagesBlock = (props) => {
 
   return (
     <>
-      <div >
+      <div>
         <div className={styles.messages}>
           {props.messagesData.map((message, index) => {
             return <Message key={index} messageText={message.messageText} />;
@@ -42,4 +48,14 @@ const MessagesBlock = (props) => {
     </>
   );
 };
-export default MessagesBlock;
+
+let mapStateToProps = (state) => {
+  return {
+    messagesData: state.messagesPage.messagesData,
+    messageTextDefault: state.messagesPage.messageTextDefault,
+  };
+};
+
+export default compose(
+  connect(mapStateToProps, { addNewMessage, updateTextMessage })
+)(MessagesBlock);

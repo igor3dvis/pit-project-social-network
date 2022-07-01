@@ -1,12 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { compose } from "redux";
 import styles from "./Nav.module.css";
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className={styles.nav}>
       <div>
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to={`/profile/${props.myId}`}>MyProfile</NavLink>
       </div>
       <div>
         <NavLink to="/users">Users</NavLink>
@@ -26,4 +28,7 @@ const Nav = () => {
     </nav>
   );
 };
-export default Nav;
+
+let mapStateToProps = (state) => ({ myId: state.auth.userID });
+
+export default compose(connect(mapStateToProps))(Nav);

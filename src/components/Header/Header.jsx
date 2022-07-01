@@ -1,5 +1,4 @@
 import React from "react";
-import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
@@ -18,11 +17,10 @@ const Header = (props) => {
         <p className={styles.contact}>hacker@gmail.net</p>
         <div className={styles.loginWrapper}>
         {props.isAuth 
-        ? <span>{props.login}</span>
-        : <Link to={'/login'}>login</Link>}
+          ? <span>{props.login}</span>
+          : <Link to={'/login'}>login</Link>}
       </div>
       </div>
-      
     </header>
   );
 };

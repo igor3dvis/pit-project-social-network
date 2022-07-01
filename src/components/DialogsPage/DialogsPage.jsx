@@ -1,14 +1,17 @@
 import React from "react";
 import styles from "./DialogsPage.module.css";
-import DialogsBlockContainer from "./DialogsBlock/DialogsBlockContainer";
-import MessagesBlockContainer from "./MessagesBlock/MessagesBlockContainer";
+import DialogsBlock from "./DialogsBlock/DialogsBlock";
+import MessagesBlock from "./MessagesBlock/MessagesBlock";
+import { compose } from "redux";
+import { withRedirectHoc } from "../../hoc/withRedirectHoc";
 
 const DialogsPage = () => {
   return (
     <div className={styles.dialogsWrapper}>
-      <DialogsBlockContainer />
-      <MessagesBlockContainer />
+      <DialogsBlock />
+      <MessagesBlock />
     </div>
   );
 };
-export default DialogsPage;
+
+export default compose(withRedirectHoc)(DialogsPage)

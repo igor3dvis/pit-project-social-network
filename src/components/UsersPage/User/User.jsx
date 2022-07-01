@@ -1,26 +1,31 @@
-import React from "react";
-import styles from "../UsersPage.module.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from '../UsersPage.module.css';
+import avatar from '../../../assets/img/avatar-base.png';
 
 const User = (props) => {
   return (
     <div className={styles.userWrapper}>
       <div className={styles.avatarWrapper}>
-        <img className={styles.avatar} src={props.avatar} alt="" />
-        {props.followBtn ? (
-          <button
-            className={styles.followBtn}
-            onClick={() => props.unfollowed(props.id)}
-          >
-            unfollow
-          </button>
-        ) : (
-          <button
-            className={styles.followBtn}
-            onClick={() => props.followed(props.id)}
-          >
-            follow
-          </button>
-        )}
+        <Link to={`/profile/${props.id}`}>
+          <img
+            className={styles.avatar}
+            src={props.photoSmall || avatar}
+            alt=""
+          />
+        </Link>
+        {props.followBtn 
+          ? <button
+              className={styles.followBtn}
+              disabled={props.fetchInProcess.some((id) => id === props.id)}
+              onClick={() => props.unfollowThunkCreator(props.id)}
+            > unfollow </button>
+         : <button
+              className={styles.followBtn}
+              disabled={props.fetchInProcess.some((id) => id === props.id)}
+              onClick={() => props.followThunkCreator(props.id)}
+            > follow </button>
+        }
       </div>
       <div className={styles.userInfo}>
         <div>
