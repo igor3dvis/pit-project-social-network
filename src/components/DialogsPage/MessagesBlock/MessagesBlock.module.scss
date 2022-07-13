@@ -1,32 +1,29 @@
+@import '../../../variables';
+@import '../../../mixin';
 
-/* messages */
 .messages {
     padding: .5em;
-    background-color: rgb(36, 36, 36);
+    background-color: $color_bg_main;
     height: calc(100vh - 140px);
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    background-color: #141514;
-    color: #96aab7;
 }
 
 .messages::-webkit-scrollbar {
-    width: 4px;
-    background-color: #2c2c2d;
+    @include scrollbar;
 }
 
 .messages::-webkit-scrollbar-thumb {
-    background-color: #96aab7;
-    border-radius: 2px;
+    @include scrollbar-thumb;
 }
 
 .message {
     margin-top: 10px;
     margin-left: 5em;
     padding: .5em;
-    background-color: #c3c8cc;
-    color: #141514;
+    background-color: $color_bg_secondary;
+    color: $color_text_dark;
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -37,12 +34,10 @@
     grid-template-columns: 10fr 2fr;
     gap: 4px;
     padding: .3em;
-    border: 1px solid #96aab7;
+    border: 1px solid $color_bg_main;
 }
 
-/* .newMessage__Text {} */
-
 .newMessage__Btn {
-    background-color: rgb(54, 54, 54);
-    color: #96aab7;
+    background-color: $color_btn_bg_dark;
+    color: $color_text_secondary;
 }

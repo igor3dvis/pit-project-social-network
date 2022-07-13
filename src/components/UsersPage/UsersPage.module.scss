@@ -1,3 +1,6 @@
+@import '../../variables';
+@import '../../mixin';
+
 .usersWrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -7,53 +10,52 @@
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    background-color: #141514;
-    color: #b296b7;
+    background-color: $color_bg_main;
+    color: $color_text_dark;
     /* background-color: rgb(34, 34, 34); */
 }
 
 .usersWrapper::-webkit-scrollbar {
-    width: 4px;
-    background-color: #2c2c2d;
+    @include scrollbar;
 }
 
 .usersWrapper::-webkit-scrollbar-thumb {
-    background-color: #96aab7;
-    border-radius: 2px;
+    @include scrollbar-thumb;
 }
+
 .pageControll{
     /* max-width: 95%; */
     margin: 5px;
     padding: 5px;
     background-color: #080808;
-}
-.countPageBtn{
-    margin-right: 0px;
-    color:#96aab7;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
+    color:$color_text_secondary;
 
+    .countPageBtn{
+        margin-right: 0px;
+        color:$color_text_secondary;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
 
 .pageNumBtn{
     cursor: pointer;
 }
+
 .pageNumBtnSelect{
     color: rgb(57, 143, 255);
 }
+
 .pageNumBtnDisabled{
-    color: #313b42;
+    color: #637581;
     cursor: default;
 }
 
-
 .activeBtn{
-    
     color:#c4dae9;
     background: transparent;
     border: 1px solid #313b42;
-    
 }
 
 .userWrapper{
@@ -63,24 +65,25 @@
     gap: .4em;
     padding: .5em;
     border-radius: 6px;
-    background-color: rgb(48, 48, 48);
+    background-color: $color_bg_secondary;
 }
+
 .avatarWrapper{
     display: grid;
     grid-template-rows: 1fr max-content;
-}
-.avatar{
-    width: 60px;
-    
-}
 
-.followBtn{
-padding: 0;
-font-weight: 500;
-background: none;
-border: none;
-color:#96aab7;
-cursor: pointer;
+    .avatar{
+        width: 60px;
+    }
+    
+    .followBtn{
+    padding: 0;
+    font-weight: 500;
+    background: none;
+    border: none;
+    color:#0f335c;
+    cursor: pointer;
+    }
 }
 
 .userInfo{
@@ -89,11 +92,12 @@ cursor: pointer;
     justify-items: end;
     gap: .4em;
 }
-.userInfo__Name{
 
-padding: .2em;
-font-weight: 700;
+.userInfo__Name{
+    padding: .2em;
+    font-weight: 700;
 }
+
 .userInfo__location{
     padding: .2em;
 }

@@ -1,4 +1,4 @@
-import { userAPI } from "../api/api";
+import { authAPI } from "../api/api";
 
 const SET_LOGIN_INFO = "SET_LOGIN_INFO";
 
@@ -15,29 +15,46 @@ export const authReducer = (state = initionalizeState, action) => {
     case SET_LOGIN_INFO:
       return {
           ...state,
-          ...action.data,
-          isAuth: true
+          ...action.payload,
       };
 
     default:
       return state;
   }
 };
-
-export const setLoginInfo = (userID, email, login) => ({
+//action_creator
+export const setLoginInfo = (userID, email, login, isAuth) => ({
   type: SET_LOGIN_INFO,
-  data:{userID, email, login},
+  payload:{userID, email, login, isAuth},
 });
-
-export const letLoginInfoThunkCreator = () => {
-  return (dispatch) => {
-    userAPI.loginInfoGet().then((data) => {
-      if (data.resultCode === 0) {
-        let { id, email, login } = data.data;
-        dispatch(setLoginInfo(id, email, login));
-      }
-    });
-
-  }
-} 
+//thunk_creator
+export const getLoginInfoTC = () => (dispatch) => {
+  authAPI.loginInfoGet()
+      .then(data => {
+          if (data.resultCode === 0) {
+            let { id, email, login } = data.data;
+            dispatch(setLoginInfo(id, email, login, true));
+          }
+      });
+}
+//thunk_creator
+export const loginTC = (email, password, rememberMe) => (dispatch) => {
+  authAPI.login(email, password, rememberMe)
+      .then((responce) => {
+          if (responce.data.resultCode === 0) {
+            dispatch(getLoginInfoTC());
+          }
+      });
+}
+//thunk_creator
+export const logoutTC = () => (dispatch) => {
+  authAPI.logout()
+      .then((responce) => {
+        console.log(responce);
+          if (responce.data.resultCode === 0) {
+            dispatch(setLoginInfo(null, null, null, false));
+          }
+      });
+}
+ 
 

@@ -44,8 +44,11 @@
     ]
   },
   "devDependencies": {
+    "formik": "^2.2.9",
+    "node-sass": "^4.13.1",
     "react-thunk": "^1.0.0",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "yup": "^0.32.11"
   },
   "description": "Runs the app in the development mode.\\ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.",
   "main": "index.js",

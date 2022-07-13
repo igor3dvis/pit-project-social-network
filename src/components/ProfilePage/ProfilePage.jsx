@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Profile.module.css";
+import styles from "./Profile.module.scss";
 import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
 import PostsBlockContainer from "./PostsBlock/PostsBlockContainer";
 import { withRedirectHoc } from "../../hoc/withRedirectHoc";

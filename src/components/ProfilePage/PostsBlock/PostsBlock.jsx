@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./PostsBlock.module.css";
+import styles from "./PostsBlock.module.scss";
 import Post from "./Post/Post";
 
 const PostsBlock = (props) => {

@@ -132,7 +132,7 @@ export const toggleFetchInProcess = (flag, userId) => ({
   userId,
 });
 
-export const getUserThunkCreator = (currentPage, countUsersOnPage) => {
+export const getUserTC = (currentPage, countUsersOnPage) => {
   return (dispatch) => {
 
     dispatch(toggleIsFetching(true));
@@ -145,7 +145,7 @@ export const getUserThunkCreator = (currentPage, countUsersOnPage) => {
   };
 };
 
-export const unfollowThunkCreator = (id) => {
+export const unfollowTC = (id) => {
   return (dispath) => {
     dispath(toggleFetchInProcess(true, id));
     userAPI.unfollowDelete(id).then((responce) => {
@@ -157,7 +157,7 @@ export const unfollowThunkCreator = (id) => {
   }
 }
 
-export const followThunkCreator = (id) => {
+export const followTC = (id) => {
   return (dispath) => {
     dispath(toggleFetchInProcess(true, id));
     userAPI.followPost(id).then((responce) => {

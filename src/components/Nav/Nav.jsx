@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { compose } from "redux";
-import styles from "./Nav.module.css";
+import styles from "./Nav.module.scss";
 
 const Nav = (props) => {
   return (

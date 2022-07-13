@@ -1,0 +1,36 @@
+@import './variables';
+
+.App {
+  text-align: center;
+}
+
+.appWrapperWithLogin {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "h h"
+    "n c";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 3fr 11fr;
+  gap: .2em;
+}
+
+.appWrapperNoLogin {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "h"
+    "c";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 1fr;
+  gap: .2em;
+}
+
+.content {
+  grid-area: c;
+  /* height: calc(100vh - 90px); */
+  background-color: $color_bg_main;
+  color: $color_text_secondary;
+}

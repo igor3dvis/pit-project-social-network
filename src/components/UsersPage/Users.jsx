@@ -1,6 +1,6 @@
 import React from "react";
 import User from "./User/User";
-import styles from "./UsersPage.module.css";
+import styles from "./UsersPage.module.scss";
 
 const Users = (props) => {
   return (

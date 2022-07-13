@@ -1,0 +1,36 @@
+@import '../../../variables';
+@import '../../../mixin';
+
+.dialogs {
+    padding: .5em;
+    background-color: $color_bg_secondary;
+    /* height: calc(100vh - 140px);  */
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.dialogs::-webkit-scrollbar {
+    @include scrollbar;
+}
+
+.dialogs::-webkit-scrollbar-thumb {
+    @include scrollbar-thumb;
+}
+
+.dialog {
+    padding: .5em 0;
+
+    .links {
+        color: $color_text_dark;
+    }
+    
+    .links::before {
+        content: "<";
+    }
+    
+    .links::after {
+        content: ">";
+    }
+}
+

@@ -16,3 +16,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+//for state console output __ for dev only
+window.store = store;

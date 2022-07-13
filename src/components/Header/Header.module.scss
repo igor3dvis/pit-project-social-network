@@ -1,0 +1,58 @@
+@import '../../variables';
+
+.header {
+    grid-area: h;
+    padding: .8em .8em;
+    background-color: $color_bg_main;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+      width: 60px;
+      border-radius: 50%;
+    }
+
+    .headerTitle{
+      color: $color_text_design;
+      font-weight: 300;
+    }
+    .contactWrapper{
+      // position: relative;
+      // display: flex;
+      // flex-direction: column;
+      color: $color_text_main;
+
+        .contact{
+          font-weight: 300;
+        }
+        
+        .loginWrapper{
+          color: $color_text_secondary;
+          .login{
+            cursor: pointer;
+          }
+        }
+      
+    }
+    .loginMenu{
+      position: absolute;
+      padding: .5em;
+      background-color: $color_bg_main;
+      
+
+      &__item{
+        margin-top: .6em;
+        cursor: pointer;
+      }
+      &__item:hover{
+        text-decoration: underline;
+      }
+    }
+}
+
+.hide{
+  display: none;
+}
+
+

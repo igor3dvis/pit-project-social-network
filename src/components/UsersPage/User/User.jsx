@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../UsersPage.module.css';
+import styles from '../UsersPage.module.scss';
 import avatar from '../../../assets/img/avatar-base.png';
 
 const User = (props) => {

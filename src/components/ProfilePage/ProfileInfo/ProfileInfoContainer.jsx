@@ -8,6 +8,7 @@ import Preloader from '../../Preloader/Preloader';
 
 
 const ProfileInfoContainer = (props) => {
+  
   useEffect(() => {
     props.userProfileInfoGetThunkCreator(props.match.params.userID);
   }, []);

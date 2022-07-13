@@ -1,7 +1,7 @@
 import React from "react";
 import Dialog from "./Dialog/Dialog";
 import { connect } from "react-redux";
-import styles from "./DialogsBlock.module.css";
+import styles from "./DialogsBlock.module.scss";
 import { compose } from "redux";
 
 const DialogsBlock = (props) => {

@@ -1,5 +1,5 @@
 import { unicId } from "../utils/idFromDateTime";
-import { userAPI } from "../api/api";
+import { profileAPI } from "../api/api";
 import { toggleIsFetching } from "./usersReducer";
 
 const ADD_NEW_POST = "ADD-NEW-POST";
@@ -55,7 +55,7 @@ export const setProfileInfo = (userInfo) => ({
 export const userProfileInfoGetThunkCreator = (userId) => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true));
-    userAPI.userProfileInfoGet(userId).then((data) => {
+    profileAPI.userProfileInfoGet(userId).then((data) => {
       dispatch(setProfileInfo(data.data));
       dispatch(toggleIsFetching(false));
     });

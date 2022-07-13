@@ -5,7 +5,7 @@ import {
 } from "../../../redux/dialogsReducer";
 import { connect } from "react-redux";
 import Message from "./Mesage/Mesage";
-import styles from "./MessagesBlock.module.css";
+import styles from "./MessagesBlock.module.scss";
 import { compose } from "redux";
 
 const MessagesBlock = (props) => {

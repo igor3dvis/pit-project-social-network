@@ -1,0 +1,13 @@
+@import '../../variables';
+
+
+.nav {
+  grid-area: n;
+  padding: .5em;
+  background-color: $color_bg_main;
+  color: $color_text_secondary;
+}
+
+.nav :last-child {
+  margin-top: 70vh;
+}

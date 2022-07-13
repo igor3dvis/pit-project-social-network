@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Header.module.css";
+//import { logoutTC } from "../../redux/authReducer";
+import styles from "./Header.module.scss";
 
 const Header = (props) => {
-  
+  const [isShowLoginMenu, setIsShowLoginMenu] = useState(false)
+
+  const showLoginMenu = () =>{setIsShowLoginMenu(true)}
+
+  const hideLoginMenu = () =>{setIsShowLoginMenu(false)}
+
+  const logoutHandler = () => {
+    console.log('LOGOUT_HANDLER');
+    props.logoutTC()}
+    
   return (
     <header className={styles.header}>
       <img
@@ -17,8 +27,18 @@ const Header = (props) => {
         <p className={styles.contact}>hacker@gmail.net</p>
         <div className={styles.loginWrapper}>
         {props.isAuth 
-          ? <span>{props.login}</span>
-          : <Link to={'/login'}>login</Link>}
+          ? <>
+              <span className={styles.login} onClick={showLoginMenu}>{props.login}</span>
+              <div  className={ isShowLoginMenu ? styles.loginMenu : styles.hide } onMouseLeave={hideLoginMenu} >
+                <div className={styles.loginMenu__item}>
+                  <Link to={`/profile/${props.userID}`}>my_profile</Link>
+                </div>
+                <div className={styles.loginMenu__item}>
+                  <span onClick={logoutHandler}>log_out</span>
+                </div>
+              </div>
+            </>
+          : <Link to={'/login'}>l o g i n</Link>}
       </div>
       </div>
     </header>
