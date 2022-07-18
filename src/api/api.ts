@@ -1,4 +1,4 @@
-import * as axios from "axios";
+import axios from "axios";
 
 const axiosInstance = axios.create({
   withCredentials: true,
@@ -8,46 +8,50 @@ const axiosInstance = axios.create({
   },
 });
 
+// type Responce = {
+//   resultCode: number
+//   data: {
+//     userID: number
+//     email: string
+//     login: string
+//     isAuth: boolean
+//   }
+// }
+
 export const authAPI = {
-  loginInfoGet() {
-    return axiosInstance.get(`auth/me`).then((responce) => responce.data);
+  async requestLoginInfo() {
+    const responce = await axiosInstance.get(`auth/me`);
+    return responce.data;
   },
 
-  login(email, password, rememberMe=false){
+  login(email: string, password: string, rememberMe=false){
     return axiosInstance.post(`auth/login`,{email, password, rememberMe})
   },
 
   logout(){
     return axiosInstance.delete(`auth/login`)
   }
-  
 };
 
 export const userAPI = {
-  usersGetAll(currentPage = 1, countUsersOnPage = 10) {
+  reguestAllUsers(currentPage = 1, countUsersOnPage = 10) {
     return axiosInstance
       .get(`users?page=${currentPage}&count=${countUsersOnPage}`)
-      .then((responce) => responce.data);
+      .then((responce:any) => responce.data);
   },
   
-  followPost(userID) {
+  follow(userID: any) {
     return axiosInstance.post(`follow/${userID}`)
   },
 
-  unfollowDelete(userID) {
+  unfollow(userID: any) {
     return axiosInstance.delete(`follow/${userID}`)
   }
 };
 
 export const profileAPI = {
-  userProfileInfoGet(userID) {
+  requestUserProfileInfo(userID: any) {
     return axiosInstance.get(`profile/${userID}`);
   },
   
 };
-
-/*
-.then(responce => {
-  return responce.data
-})
-*/

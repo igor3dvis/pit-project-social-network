@@ -1,32 +1,29 @@
-import React from "react";
-import {
-  addNewMessage,
-  updateTextMessage,
-} from "../../../redux/dialogsReducer";
-import { connect } from "react-redux";
-import Message from "./Mesage/Mesage";
-import styles from "./MessagesBlock.module.scss";
-import { compose } from "redux";
+import React from 'react'
+import { addNewMessageAC, updateTextMessageAC } from '../../../redux/dialogsReducer'
+import { connect } from 'react-redux'
+import Message from './Mesage/Mesage'
+import styles from './MessagesBlock.module.scss'
+import { compose } from 'redux'
 
 const MessagesBlock = (props) => {
   //const {  } = props;
 
-  let newMess = React.createRef();
+  let newMess = React.createRef()
 
   const handlerAddMessage = () => {
-    props.addNewMessage();
-  };
+    props.addNewMessage()
+  }
 
   const handlerMessageChange = () => {
-    props.updateMessage(newMess.current.value);
-  };
+    props.updateMessage(newMess.current.value)
+  }
 
   return (
     <>
       <div>
         <div className={styles.messages}>
           {props.messagesData.map((message, index) => {
-            return <Message key={index} messageText={message.messageText} />;
+            return <Message key={index} messageText={message.messageText} />
           })}
         </div>
 
@@ -53,9 +50,9 @@ let mapStateToProps = (state) => {
   return {
     messagesData: state.messagesPage.messagesData,
     messageTextDefault: state.messagesPage.messageTextDefault,
-  };
-};
+  }
+}
 
 export default compose(
-  connect(mapStateToProps, { addNewMessage, updateTextMessage })
-)(MessagesBlock);
+  connect(mapStateToProps, { addNewMessageAC, updateTextMessageAC })
+)(MessagesBlock)

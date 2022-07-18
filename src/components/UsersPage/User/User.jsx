@@ -18,12 +18,12 @@ const User = (props) => {
           ? <button
               className={styles.followBtn}
               disabled={props.fetchInProcess.some((id) => id === props.id)}
-              onClick={() => props.unfollowThunkCreator(props.id)}
+              onClick={() => props.unfollowTC(props.id)}
             > unfollow </button>
          : <button
               className={styles.followBtn}
               disabled={props.fetchInProcess.some((id) => id === props.id)}
-              onClick={() => props.followThunkCreator(props.id)}
+              onClick={() => props.followTC(props.id)}
             > follow </button>
         }
       </div>

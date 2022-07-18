@@ -1,8 +1,9 @@
 import React from "react";
 import Preloader from "../../Preloader/Preloader";
+import avatar from '../../../assets/img/avatar-base.png';
 import styles from "./ProfileInfo.module.scss";
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({userProfileInfo, isFetching}) => {
   const {
     aboutMe,
     contacts,
@@ -10,18 +11,18 @@ const ProfileInfo = (props) => {
     lookingForAJob,
     lookingForAJobDescription,
     photos,
-  } = props.userProfileInfo;
+  } = userProfileInfo;
 
   return (
     <>
       <div className={styles.img}></div>
-      {props.isFetching 
+      {isFetching 
         ? <Preloader />
         : <>
             <div className={styles.profile__top}>
               <img
                 className={styles.profile__avatar}
-                src={props.userProfileInfo.photos.small}
+                src={userProfileInfo.photos.small || avatar}
                 alt="fon"
               />
               <div className={styles.profile__description}>

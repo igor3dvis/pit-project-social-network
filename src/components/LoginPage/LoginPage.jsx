@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import { loginTC } from "../../redux/authReducer";
+import { getIsAuth } from "../../redux/authSelectors";
 import LoginModal from "./LoginModal";
 import styles from "./LoginPage.module.scss";
 
@@ -18,7 +19,7 @@ const LoginPage = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: getIsAuth(state)
 })
 
 export default connect(mapStateToProps, {loginTC})(LoginPage);

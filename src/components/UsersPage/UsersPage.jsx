@@ -4,6 +4,8 @@ import { followed, unfollowed, setCountUsersOnPage, setCurrentPage,
   toggleFetchInProcess, getUserTC, unfollowTC,
   followTC,
 } from "../../redux/usersReducer";
+import { getUsers, getTotalUsersCount, getCountUsersOnPage,
+  getCurrentPage, getIsFetching, getFetchInProcess } from '../../redux/usersSelectors'
 import Users from "./Users";
 import styles from "./UsersPage.module.scss";
 import { withRedirectHoc } from "../../hoc/withRedirectHoc";
@@ -116,16 +118,15 @@ const UsersPage = (props) => {
   
 }
 
-let mapStateToProps = (state) => {
-  return {
-    users: state.usersPage.users,
-    totalUsersCount: state.usersPage.totalUsersCount,
-    countUsersOnPage: state.usersPage.countUsersOnPage,
-    currentPage: state.usersPage.currentPage,
-    isFetching: state.usersPage.isFetching,
-    fetchInProcess: state.usersPage.fetchInProcess,
-  };
-};
+let mapStateToProps = (state) => ({
+  users: getUsers(state),
+  totalUsersCount: getTotalUsersCount(state),
+  countUsersOnPage: getCountUsersOnPage(state),
+  currentPage: getCurrentPage(state),
+  isFetching: getIsFetching(state),
+  fetchInProcess: getFetchInProcess(state),
+  }
+)
 
 export default compose(
   connect(mapStateToProps, {

@@ -18,8 +18,8 @@ const Users = (props) => {
               followBtn={user.followed}
               fetchInProcess={props.fetchInProcess}
               toggleFetchInProcess={props.toggleFetchInProcess}
-              unfollowThunkCreator={props.unfollowThunkCreator}
-              followThunkCreator={props.followThunkCreator}
+              unfollowTC={props.unfollowTC}
+              followTC={props.followTC}
             />
         );
       })}

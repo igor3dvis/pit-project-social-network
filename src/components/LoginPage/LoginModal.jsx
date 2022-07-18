@@ -2,7 +2,6 @@ import React from "react";
 import { Formik, Field } from "formik";
 import * as yup from "yup";
 import styles from "./LoginPage.module.scss";
-//import { loginTC } from "../../redux/authReducer";
 
 const LoginModal = (props) => {
   const validationSchema = yup.object().shape({

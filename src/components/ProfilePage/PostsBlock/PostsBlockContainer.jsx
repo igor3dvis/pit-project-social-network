@@ -1,8 +1,5 @@
 import PostsBlock from "./PostsBlock";
-import {
-  addNewPost,
-  updateNewPost,
-} from "../../../redux/profileReducer";
+import { addNewPost, updateNewPost } from "../../../redux/profileReducer";
 import { connect } from "react-redux";
 
 let mapStateToProps = (state) => {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter} from 'react-router-dom'
-import { userProfileInfoGetThunkCreator } from '../../../redux/profileReducer';
+import { userProfileInfoGetTC } from '../../../redux/profileReducer';
 import ProfileInfo from './ProfileInfo';
 import Preloader from '../../Preloader/Preloader';
 
@@ -10,11 +10,11 @@ import Preloader from '../../Preloader/Preloader';
 const ProfileInfoContainer = (props) => {
   
   useEffect(() => {
-    props.userProfileInfoGetThunkCreator(props.match.params.userID);
+    props.userProfileInfoGetTC(props.match.params.userID);
   }, []);
 
   useEffect(() => {
-    props.userProfileInfoGetThunkCreator(props.match.params.userID);
+    props.userProfileInfoGetTC(props.match.params.userID);
   }, [props.match.params.userID]);
 
   return (
@@ -31,14 +31,13 @@ const ProfileInfoContainer = (props) => {
   );
 };
 
-let mapStateToProps = (state) => {
-  return {
-    state: state.profilePage,
-    isFetching: state.usersPage.isFetching,
-  };
-};
+let mapStateToProps = (state) => ({
+  state: state.profilePage,
+  isFetching: state.usersPage.isFetching,
+  }
+)
 
 export default compose(
-  connect(mapStateToProps, { userProfileInfoGetThunkCreator }),
+  connect(mapStateToProps, { userProfileInfoGetTC }),
   withRouter
 )(ProfileInfoContainer)

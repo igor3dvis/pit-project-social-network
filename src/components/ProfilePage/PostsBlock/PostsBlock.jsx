@@ -3,8 +3,7 @@ import styles from "./PostsBlock.module.scss";
 import Post from "./Post/Post";
 
 const PostsBlock = (props) => {
-  //const { } = props;
-
+  
   let newPost = React.createRef();
 
   const handlerAddPost = () => props.addNewPost();

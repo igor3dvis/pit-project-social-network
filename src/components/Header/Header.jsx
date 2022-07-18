@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-//import { logoutTC } from "../../redux/authReducer";
 import styles from "./Header.module.scss";
 
 const Header = (props) => {
@@ -11,7 +10,6 @@ const Header = (props) => {
   const hideLoginMenu = () =>{setIsShowLoginMenu(false)}
 
   const logoutHandler = () => {
-    console.log('LOGOUT_HANDLER');
     props.logoutTC()}
     
   return (
